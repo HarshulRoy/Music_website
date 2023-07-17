@@ -200,6 +200,46 @@ const songs=[
 ]
 
 
+// search data start 
+
+let search_result = document.getElementsByClassName('search_result')[0];
+
+songs.forEach(element =>{
+    const { id, songName, poster} = element;
+    let card = document.createElement('a');
+    card.classList.add('card')
+    card.href='#'+id
+    card.innerHTML=`
+    <img src="${poster}" alt="">
+    <div class="content">
+        ${songName}
+    </div>`;
+    search_result.appendChild(card)
+})
+
+let input = document.getElementsByTagName('input')[0];
+input.addEventListener('keyup', ()=>{
+    let input_value = input.value.toUpperCase();
+    let items = search_result.getElementsByTagName('a');
+
+    for (let i = 0; i < items.length; i++) {
+        let as = items[i].getElementsByClassName('content')[0];
+        let text_value = as.textContent || as.innerText;
+        if (text_value.toUpperCase().indexOf(input_value) > -1) {
+            items[i].style.display='flex';
+        }else{
+            items[i].style.display='none';
+        }
+         
+        if(input.value == 0){
+            search_result.style.display = 'none'
+        }else{
+        search_result.style.display = 'flex'
+    }}
+})
+
+// search data end  
+
 Array.from(document.getElementsByClassName('songItem')).forEach((e,i)=>{
     e.getElementsByTagName('img')[0].src=songs[i].poster;
     e.getElementsByTagName('h5')[0].innerHTML=songs[i].songName;
@@ -631,3 +671,28 @@ music.addEventListener('ended',()=>
                 break;
         }
     })
+
+    // toggle button ----------------
+    let btn=document.querySelector('.menu_list_active_button');
+    let leftbox=document.getElementById('leftbox');
+    let menu_btn=document.getElementsByClassName('menu_list_active_button')[0]
+    btn.addEventListener('click',()=>{
+        leftbox.style.transform='unset'
+        btn.style.opacity=0
+    })
+    let rightbox=document.getElementById('rightbox');
+    
+    rightbox.addEventListener('click',()=>{
+        if(window.outerWidth< 947){
+        leftbox.style.transform='translateX(-100%)'
+        btn.style.opacity=1}
+        if(search.classList.contains('search_active')){
+            search.classList.remove('search_active')}
+        
+    })
+
+    // search btn ---------------
+    let search=document.getElementsByClassName('search')[0];
+    // search.addEventListener('click',()=>{
+        
+    // })
