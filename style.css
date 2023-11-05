@@ -367,13 +367,14 @@ header #bottombox .bar input{
     height:20px;
 }
 header #bottombox .vol{
-    position: relative;
+    position: absolute;
     width: 100px;
     height: 2px;
     background: rgb(105, 105, 170, .1);
-    margin-left: 30px;
+    /* margin-left: 30px; */
     transition: 0.3s linear;
     z-index: 999;
+    right: 0px;
 }
 header #bottombox .vol:hover{
     background-color: #4c5262;
@@ -815,7 +816,7 @@ header #rightbox .popular_artists .item li img{
     }
 }
 
-@media screen and (max-width:645px) and (min-width:440px) {
+@media screen and (max-width:645px) {
 
     header #bottombox .icon {
         margin-inline: 30%;
@@ -823,7 +824,7 @@ header #rightbox .popular_artists .item li img{
         z-index: 3;
         width: 34%;
         justify-content: center;
-        top: 85%;
+        top: 92%;
     }
 
     header #bottombox .wave {
@@ -833,9 +834,22 @@ header #rightbox .popular_artists .item li img{
         width: 34%;
         justify-content: center;
         margin-inline: 30%;
+        display:none;
+    }
+    header #bottombox span {
+        display:none;
+    }
+    .dot{
+        display: none;
+    }
+    header #bottombox .bar{
+        position: absolute;
+        top: 90%;
+        width: 100%;
+        margin: 0;
     }
 
-    header #bottombox .icon::before {
+    /* header #bottombox .icon::before {
         content: '';
         position: absolute;
         width: 120%;
@@ -845,10 +859,10 @@ header #rightbox .popular_artists .item li img{
         border-radius: 50% 50% 0% 0%;
         left: -15px;
         box-shadow: 0px -11px 20px -17px #000;
-    }
+    } */
 }
 
-@media screen and (max-width:440px) {
+/* @media screen and (max-width:440px) {
     header #bottombox .icon {
         margin-inline: 20%;
         position: absolute;
@@ -865,9 +879,9 @@ header #rightbox .popular_artists .item li img{
         width: 32%;
         justify-content: center;
         margin-inline: 34%;
-    }
+    } */
 
-    header #bottombox .icon::before {
+    /* header #bottombox .icon::before {
         content: '';
         position: absolute;
         width: 100%;
@@ -875,12 +889,11 @@ header #rightbox .popular_artists .item li img{
         background: #111727;
         z-index: -10;
         border-radius: 50% 50% 0% 0%;
-        /* left: -15px; */
         box-shadow: 0px -11px 20px -17px #000;
     }
-}
+} */
 
-@media screen and (max-width:506px) {
+/* @media screen and (max-width:506px) {
 
     header #rightbox nav {
         width: 90%;
@@ -936,4 +949,4 @@ header #rightbox .popular_artists .item li img{
     #leftbox {
         width: 241px;
     }
-}
+} */
