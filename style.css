@@ -367,14 +367,14 @@ header #bottombox .bar input{
     height:20px;
 }
 header #bottombox .vol{
-    position: absolute;
+    position: relative;
     width: 100px;
     height: 2px;
     background: rgb(105, 105, 170, .1);
-    /* margin-left: 30px; */
+    margin-left: 30px;
     transition: 0.3s linear;
     z-index: 999;
-    right: 0px;
+    
 }
 header #bottombox .vol:hover{
     background-color: #4c5262;
@@ -841,6 +841,15 @@ header #rightbox .popular_artists .item li img{
     }
     .dot{
         display: none;
+    }
+    header #bottombox .vol{
+        position: absolute;
+        width: 100px;
+        height: 2px;
+        background: rgb(105, 105, 170, .1);
+        transition: 0.3s linear;
+        z-index: 999;
+        right: 0px;
     }
     header #bottombox .bar{
         position: absolute;
